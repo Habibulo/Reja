@@ -1,3 +1,5 @@
+/* 
+18-19 Darslar
 console.log('web serverni boshlash')
 
 // buyerdan biz expressni ornatamiz [npm install express --save]
@@ -30,6 +32,10 @@ app.get('/hello', function(req, res){
 app.get('/gifts', function(req, res){
     res.end('<h1>Siz endi Sovgalar bolimidasiz</h1>')
 })
+app.get('/', function(req, res){
+    res.render("shopping")
+})
+
 const server = http.createServer(app)
 let PORT = 3000
 server.listen(PORT, function() {
@@ -44,7 +50,6 @@ server.listen(PORT, function() {
     > git add .
     > git commit -m "BRR: Build Express Web Server"
     > git log --oneline
+    
 */
-
-// new comment added
-// clean
+// 18-19 dars tugashi*/
