@@ -1,5 +1,4 @@
-/* 
-18-19 Darslar
+// 18-19 Darslar
 console.log('web serverni boshlash')
 
 // buyerdan biz expressni ornatamiz [npm install express --save]
@@ -50,11 +49,11 @@ server.listen(PORT, function() {
     > git add .
     > git commit -m "BRR: Build Express Web Server"
     > git log --oneline
+    > git push -u origin master
     
 */
 // 18-19 dars tugashi*/
 
-/*
-20-21 Darslar
+// 20-21 Darslar
 
 // 20-21 Darslar tugashi*/
