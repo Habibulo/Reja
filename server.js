@@ -1,5 +1,4 @@
-/* 
-18-19 Darslar
+// 18-19 Darslar
 console.log('web serverni boshlash')
 
 // buyerdan biz expressni ornatamiz [npm install express --save]
@@ -54,7 +53,7 @@ server.listen(PORT, function() {
 */
 // 18-19 dars tugashi*/
 
-/*
-20-21 Darslar
+
+// 20-21 Darslar
 
 // 20-21 Darslar tugashi*/
