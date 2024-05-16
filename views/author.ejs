@@ -26,7 +26,7 @@
                 <div class="left_container_1">
                     <div class="profile_img_container">
                         <img 
-                            src="images/profile.svg" 
+                            src="images/Profile.jpeg" 
                             width="156px"
                             height="142px"
                             />
@@ -139,7 +139,7 @@
                 </div>
                 <div class="extra_skill">
                     <hr class="hr">
-                    <h3>Extra skills</h3>
+                    <h3>Extra Skills</h3>
                     <div class="extra_skill_container">
                         <img src="icon/skill.png" alt="icon" width="20px" height="20px">
                         <p style="padding-left: 8px;">  bootstrap, Materialize </p>    
@@ -159,11 +159,77 @@
                         <p style="padding-left: 8px;">  Git knowledge </p>    
                     </div>
                 </div>                
+        <div class="midd_frame">
+          <div id="midd_frame">
+            <img src="icon/Polygon1.svg" alt="" class="springkle1" />
+            <img src="icon/Ellipse15.svg" alt="" class="springkle2" />
+            <img src="icon/Ellipse16.svg" alt="" class="springkle3" />
+            <img src="icon/Ellipse 12.svg" alt="" class="springkle5" />
+            <img src="icon/Rectangle 52.svg" alt="" class="springkle4" />
+            <img src="icon/Rectangle 52.svg" alt="" class="springkle6" />
 
+            <div class="wrapper">
+              <h1>Hi, I am <%= user.name %> <%= user.profession %> in <%=user.work_place%></h1>
+              <p><%=user.about_me%></p>
+              <button>HIRE ME -></button>
             </div>
-            <div class="midd_frame"></div>
-            <div class="right_frame"></div>
+            <div class="img-container">
+              <img style="width: 100%" src="images/your_Image.png" alt="" />
+            </div>
+          </div>
+          <div class="services">
+            <div class="services_to_center">
+                <h1>My Services</h1>
+                <p><%=user.service_desc%></p>
+            </div>        
+            <div class="myservice-container">
+              <div class="myservice">
+                <img src="box_images/web-development.svg" alt="" />
+                <h5>Web development</h5>
+                <p>Blog, E-commerce</p>
+              </div>
+              <div class="myservice">
+                <img src="box_images/Illustration.png" alt="" />
+                <h5>UI/UX Design</h5>
+                <p>Mobile app, website design</p>
+              </div>
+              <div class="myservice">
+                <img src="box_images/microphone.png" alt="" />
+                <h5>Sound Design</h5>
+                <p>Voice Over, Beat Making</p>
+              </div>
+              <div class="myservice">
+                <img src="box_images/game-development.png" alt="" />
+                <h5>Game Design</h5>
+                <p>Character Design, Props & Objects</p>
+              </div>
+              <div class="myservice">
+                <img src="box_images/Photographer.png" alt="" />
+                <h5>photography</h5>
+                <p>portrait, product photography</p>
+              </div>
+              <div class="myservice">
+                <h5>Advertising</h5>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae
+                  nulla diam in ac dictum a urna
+                </p>
+                <p style="color: #ffb400; border: 0.5px solid rgb(255, 180, 0);border-radius: 30px;",>ORDER NOW > </p>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
+        <div class="right_frame">
+          <img class="right_icon_contrast" src="icon/contrast.png" alt="" />
+          <div class="right-icons">
+            <img class="home-icon" src="icon/Home.png" alt="" />
+            <img class="right-icon" src="icon/Service.png" alt="" />
+            <img class="right-icon" src="icon/Cv.png" alt="" />
+            <img class="right-icon" src="icon/Portfolio.png" alt="" />
+            <img class="right-icon" src="icon/Blog.png" alt="" />
+            <img class="right-icon" src="icon/Contact.png" alt="" />
+          </div>
+        </div>
+      </div>
 </body>
 </html>
