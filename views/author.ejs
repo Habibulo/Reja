@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/main.css">
+    
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/fd0b39862d.js" ></script>
+    <title>Portfolio</title>
+</head>
+<body>
+    <!-- MAIN FRAME -->
+    <div class="frame">
+        <div class="main_frame">
+            <div class="left_frame">
+                <div class="left_container_1">
+                    <div class="profile_img_container">
+                        <img 
+                            src="images/profile.svg" 
+                            width="156px"
+                            height="142px"
+                            />
+                    </div>
+                    <div class="left_user_name"><%=user.name%></div>
+                    <div class="left_user_title"><%=user.profession%></div>
+                    <div class="left_icons">
+                        <img src="icon/facebook.svg" alt="icon" width="25" height="21">
+                        <img src="icon/instagram.svg" alt="icon" width="25" height="21">
+                        <img src="icon/github.svg" alt="icon" width="25" height="21">
+                        <img src="icon/telegram.svg" alt="icon" width="25" height="21">
+                        <img src="icon/linkedin.svg" alt="icon" width="25" height="21">
+                    </div>
+                </div>
+                <div class="marginer">
+                    <hr class="hr">
+          
+                    <div class="user_data_container">
+                      <div class="user_data_title">Age:</div>
+                      <p class="user_data"><%=user.age%></p>
+                    </div>
+                    <div class="user_data_container">
+                      <div class="user_data_title">Residence:</div>
+                      <p class="user_data"><%=user.residence%></p>
+                    </div>
+                    <div class="user_data_container">
+                      <div class="user_data_title">Freelance:</div>
+                      <p style="color: rgb(91, 147, 7); size: 16px;" class="user_data"> <%=user.freelance[0]%></p>
+                    </div>
+                    <div class="user_data_container">
+                      <div class="user_data_title">Adress:</div>
+                      <p class="user_data"><%=user.adress%></p>
+                    </div>
+                  </div>
+
+                <div class="left_lang_skill_container">
+                    <hr class="hr">
+                    <div class="empty_container">
+                        <h3 class="h3_lang" >Languages</h3> 
+                        <div class="lang_perc_container">
+                            <div>Uzbek</div>
+                            <p class="user_data">100%</p>
+                        </div>
+                        <div class="uzbek">
+                                <div class="skills"></div>             
+                        </div>
+
+                        <div class="lang_perc_container">
+                            <div>English</div>
+                            <p class="user_data">90%</p>
+                        </div>
+                        <div class="english">
+                                <div class="skills"></div>             
+                        </div>
+
+                        <div class="lang_perc_container">
+                            <div>Korean</div>
+                            <p class="user_data">70%</p>
+                        </div>
+                        <div class="korean">
+                                <div class="skills"></div>             
+                        </div>
+                    </div>
+                </div>
+
+                <div class="left_lang_skill_container">
+                    <hr class="hr">
+                    <div class="empty_container">
+                        <h3 class="h3_skill">Skills</h3> 
+                        <div class="lang_perc_container">
+                            <div>Html</div>
+                            <p class="user_data">90%</p>
+                        </div>
+                        <div class="html_css">
+                                <div class="skills"></div>             
+                        </div>
+
+                        <div class="lang_perc_container">
+                            <div>NodeJs</div>
+                            <p class="user_data">75%</p>
+                        </div>
+                        <div class="node_js">
+                                <div class="skills"></div>             
+                        </div>
+
+                        <div class="lang_perc_container">
+                            <div>JavaScript</div>
+                            <p class="user_data">80%</p>
+                        </div>
+                        <div class="javascript">
+                                <div class="skills"></div>             
+                        </div>
+
+                        <div class="lang_perc_container">
+                            <div>Python</div>
+                            <p class="user_data">90%</p>
+                        </div>
+                        <div class="python">
+                                <div class="skills"></div>             
+                        </div>
+                        
+                        <div class="lang_perc_container">
+                            <div>Express&Django</div>
+                            <p class="user_data">50%</p>
+                        </div>
+                        <div class="express_django">
+                                <div class="skills"></div>             
+                        </div>
+                    </div>
+                </div>
+                <div class="extra_skill">
+                    <hr class="hr">
+                    <h3>Extra skills</h3>
+                    <div class="extra_skill_container">
+                        <img src="icon/skill.png" alt="icon" width="20px" height="20px">
+                        <p style="padding-left: 8px;">  bootstrap, Materialize </p>    
+                    </div>
+
+                    <div class="extra_skill_container">
+                        <img src="icon/skill.png" alt="icon" width="20px" height="20px">
+                        <p style="padding-left: 8px;">  react, aws, mongodb </p>    
+                    </div>
+
+                    <div class="extra_skill_container">
+                        <img src="icon/skill.png" alt="icon" width="20px" height="20px">
+                        <p style="padding-left: 8px;">  docker, graphql, nestjs </p>    
+                    </div>
+                    <div class="extra_skill_container">
+                        <img src="icon/skill.png" alt="icon" width="20px" height="20px">
+                        <p style="padding-left: 8px;">  Git knowledge </p>    
+                    </div>
+                </div>                
+
+            </div>
+            <div class="midd_frame"></div>
+            <div class="right_frame"></div>
+        </div>
+    </div>
+</body>
+</html>
