@@ -385,7 +385,7 @@
   }
   .springkle5 {
     position: absolute;
-    left: 355.55px;
+    left: 555.55px;
     top: 62.26px;
   }
   .springkle6 {
@@ -503,6 +503,38 @@
     text-align: center;
     justify-content: center;
     text-transform: capitalize;
-    width: 100%;
-    margin-bottom: 50px;
+    width: 30%;
+    margin-bottom: 25px;
+    margin-left: 340px;
   } 
+  .advertising_desc {
+    width: 80%;
+    color: rgb(118, 118, 118);
+    text-align: center;
+    text-transform: capitalize;
+    margin-top: 10px;
+    margin-left: 25px;
+  }
+  .myservice_last {
+      color: rgb(118, 118, 118);
+      width: 250px;
+      height: 225px;
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      flex-direction: column;
+      /* margin: 4px; */
+      background-color: #ffffff;
+      text-align: center;
+    }
+    .order-now {
+      margin-top: 50px;
+      width: 100px;
+      height: 20px;
+      border-radius: 10%;
+      background-color: rgb(255, 180, 0);
+      font-family: "Inter";
+      font-size: 16px;
+      line-height: 3px;
+    }
+    
