@@ -484,17 +484,25 @@
     margin-bottom: 25px;
   }
 .services_to_center {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 250px;
-    height: 225px;
-    /* background: rgb(255, 255, 255); */
-    padding-top: 5px;
-    /* width: 899.51px;
-    height: 216.74px;
-    display: flex;
-    flex-direction: column;
-    gap: 1px; */
+  color: rgb(43, 43, 43);
+	font-family: Inter;
+	font-size: 26px;
+	font-weight: 700;
+	line-height: 123.6%;
+	letter-spacing: 0%;
+	text-align: left;
+	text-transform: capitalize;
+	margin-bottom: 20px;
 }
+.services_desc {
+    color: rgb(118, 118, 118);
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-align: center;
+    justify-content: center;
+    text-transform: capitalize;
+    width: 100%;
+    margin-bottom: 50px;
+  } 
