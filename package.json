@@ -1,12 +1,17 @@
 {
+  "dependencies": {
+    "node": "^22.2.0",
+    "nodemon": "^3.1.0",
+    "require": "^2.4.20"
+  },
   "name": "reja",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "main": "train.js",
+  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "train": "nodemon train.js",
     "dev": "nodemon server.js",
-    "train": "train nodemon example.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -19,11 +24,5 @@
     "url": "https://github.com/Habibulo/Reja/issues"
   },
   "homepage": "https://github.com/Habibulo/Reja#readme",
-  "dependencies": {
-    "ejs": "^3.1.10",
-    "express": "^4.19.2",
-    "figma": "^0.0.1",
-    "node": "^20.13.1",
-    "nodemon": "^3.1.0"
-  }
+  "description": ""
 }
