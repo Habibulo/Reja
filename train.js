@@ -1,5 +1,3 @@
-// Here 21th & 22th Tasks start!
-// 2024-05-20
 // MIT 14 TASK A
 // Harf sifatida kiritilgan birinchi parametr, 
 // kiritilgan ikkinchi parametr tarkibida nechta ekanligini qaytaruvchi
