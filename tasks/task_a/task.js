@@ -7,20 +7,5 @@
 // 'engineer' so'zi tarkibida 'e' harfi 3 marotaba takrorlanganligi uchun
 // 3 sonini qaytaradi
 
-const kerakli_harf = "e";
-const sentence = "engineer";
-
-const countLetter = (letter, sentence) => {
-  const times = [];
-
-  for (let letter of sentence.split("")) {
-    if (letter.includes(kerakli_harf)) {
-      times.push(letter);
-    }
-  }
-
-  return times.length;
-};
-
-const result = countLetter(lt, sentence);
-console.log(`'${kerakli_harf}' letter is repeated in '${sentence}' sentence '${result}' times`);
+const approach_1 = require("./approach_1")
+const approach_2 = require("./approach_2")
