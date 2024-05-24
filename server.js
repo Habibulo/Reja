@@ -34,7 +34,7 @@ app.post("/create-item", (req, res) => {
     res.json({ test: 'success' });
 }); //malumotni databasada mutatsiyaga uchratadi: {create, update, delete}
 app.get('/', (req, res) => {
-    res.render("shopping",)
+    res.render("reja",)
 })
 
 app.get('/author', (req, res) => {
@@ -44,5 +44,6 @@ app.get('/author', (req, res) => {
 const server = http.createServer(app)
 let PORT = 3000
 server.listen(PORT, function() {
-    console.log(`The server is successfully is working on port: ${PORT}`)
+    console.log(`The server is successfully is working on port: ${PORT} http://localhost:${PORT}`)
+    console.log(`Portfolio is working on port: ${PORT} http://localhost:${PORT}/author`)
 })
