@@ -47,4 +47,3 @@ server.listen(PORT, function() {
     console.log(`The server is successfully is working on port: ${PORT} http://localhost:${PORT}`)
     console.log(`Portfolio is working on port: ${PORT} http://localhost:${PORT}/author`)
 })
-// new comment
