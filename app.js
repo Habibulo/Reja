@@ -16,7 +16,8 @@ fs.readFile("database/user.json", "utf8", (err, data) => {
 })
 
 // 1.MongoDB Connect
-const db  = require("./server").db();
+const db = require("./server");
+db();
 
 // 1 Kirish uchun Codes
 app.use(express.static('public'))
@@ -34,15 +35,35 @@ app.set('view engine', 'ejs')
 // 4 Route Codes
 app.post("/create-item", (req, res) => {
     console.log(req.body);
-    res.json({ test: 'success' });
-}); //malumotni databasada mutatsiyaga uchratadi: {create, update, delete}
+    const new_reja = req.body.reja;
+    db.collection("plans").insertOne({reja: new_reja}, (err, data) => {
+        if(err) {
+            console.log(err);
+            res.end('something went wrong')
+        } else {
+            res.end('successfully added');
+        }
+    });
+});
+//malumotni databasada mutatsiyaga uchratadi: {create, update, delete}
 app.get('/', (req, res) => {
-    res.render("reja",)
+    db.collection
+    res.render("plans").find().toArray((err, data) => {
+        if(err){
+            console.log("error:", err)
+            res.send("something went wrong")
+        }
+        else {
+            console.log(data)
+            res.render('reja')
+        }
+    })
 })
 
 app.get('/author', (req, res) => {
     res.render("author", {user: user})
 })
+
 
 
 module.exports = app;
