@@ -1,10 +1,9 @@
-//  Darslar
 console.log('web serverni boshlash')
 const ejs = require('ejs');
 const express = require('express');
 const app = express();
 const fs = require('fs');
-const { json } = require('stream/consumers');
+const { ObjectId } = require('mongodb');  // Import ObjectId from mongodb
 
 let user 
 fs.readFile("database/user.json", "utf8", (err, data) => {
@@ -25,11 +24,9 @@ app.use(express.urlencoded({extended: true}))  // html form dan birorbir narsani
 
 // 2 Session Codes
 
-
 // 3 Views Codes
 app.set('views', 'views')
 app.set('view engine', 'ejs')
-
 
 // 4 Route Codes
 app.post("/create-item", (req, res) => {
@@ -43,8 +40,8 @@ app.post("/create-item", (req, res) => {
         res.end("(app.post/create-item) added successfully!");
       }
     });
-  });
-//malumotni databasada mutatsiyaga uchratadi: {create, update, delete}
+});
+
 app.get("/", function (req, res) {
 	console.log("user entered /")
 	db.collection("reja")
@@ -55,14 +52,26 @@ app.get("/", function (req, res) {
 				res.end("(app.get/) something went wrong");
 			} else {
 				console.log("Collection Data: ", data);
-				res.render("reja", { items: data});
+				res.render("reja", { items: data });
 			}
 		});
 });
+
+app.delete("/delete-item", function (req, res){
+    console.log("user deleted /")
+    const itemId = req.body.id;
+    db.collection("reja").deleteOne({ _id: new ObjectId(itemId) }, (err, result) => {
+        if (err) {
+            console.log("error on delete-item request: ", err.message);
+            res.end("(app.delete/delete-item) something went wrong!");
+        } else {
+            res.end("(app.delete/delete-item) deleted successfully!");
+        }
+    });
+});
+
 app.get('/author', (req, res) => {
-    res.render("author", {user: user})
+    res.render("author", { user: user });
 })
-
-
 
 module.exports = app;
