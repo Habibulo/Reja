@@ -1,5 +1,8 @@
 {
   "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.19.2",
+    "mongodb": "^3.2.6",
     "node": "^22.2.0",
     "nodemon": "^3.1.0",
     "require": "^2.4.20"
@@ -7,7 +10,6 @@
   "name": "reja",
   "version": "1.0.0",
   "main": "train.js",
-  "devDependencies": {},
   "scripts": {
     "train": "nodemon train.js",
     "dev": "nodemon server.js",

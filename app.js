@@ -1,6 +1,6 @@
-// 18 - 19 - 20 - 21 Darslar
+//  Darslar
 console.log('web serverni boshlash')
-const { render } = require('ejs');
+const ejs = require('ejs');
 const express = require('express');
 const app = express();
 const fs = require('fs');
@@ -16,6 +16,7 @@ fs.readFile("database/user.json", "utf8", (err, data) => {
 })
 
 // 1.MongoDB Connect
+const db  = require("./server").db();
 
 // 1 Kirish uchun Codes
 app.use(express.static('public'))
@@ -42,5 +43,6 @@ app.get('/', (req, res) => {
 app.get('/author', (req, res) => {
     res.render("author", {user: user})
 })
+
 
 module.exports = app;

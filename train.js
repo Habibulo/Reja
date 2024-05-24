@@ -173,3 +173,18 @@
 
 
 // 23-24-25 Dars
+
+// MIT 14 TASK B
+
+// Shunday, function tuzingki, bu function yagona parametrga ega bo'lib
+// string tarkibidagi sonlar miqdorini qaytarsin
+
+// Masalan: countDigits("ad2a54y79wet0sfgb9")
+// Yoqoridagi string tarkibida 7 dona raqam qatnashganligi uchun, natija 7 qaytadi
+
+// ===================================================================================
+const countDigits_2 = (text) => {
+    return text.replace(/[^0-9]/g, "").length;
+};
+
+console.log("Answer:", countDigits_2("ad2a54y79wet0sfgb9"));
