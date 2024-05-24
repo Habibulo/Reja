@@ -46,19 +46,19 @@ app.post("/create-item", (req, res) => {
   });
 //malumotni databasada mutatsiyaga uchratadi: {create, update, delete}
 app.get("/", function (req, res) {
-    console.log("user entered /")
-    db.collection("plan")
-      .find()
-      .toArray((err, data) => {
-        if (err) {
-          console.log("Collection Error: ", err.message);
-          res.end("(app.get/) something went wrong");
-        } else {
-          console.log("Collection Data: ", data);
-          res.render("reja", { items: data});
-        }
-      });
-  });
+	console.log("user entered /")
+	db.collection("reja")
+		.find()
+		.toArray((err, data) => {
+			if (err) {
+				console.log("Collection Error: ", err.message);
+				res.end("(app.get/) something went wrong");
+			} else {
+				console.log("Collection Data: ", data);
+				res.render("reja", { items: data});
+			}
+		});
+});
 app.get('/author', (req, res) => {
     res.render("author", {user: user})
 })
