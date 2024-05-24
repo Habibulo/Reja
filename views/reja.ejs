@@ -26,7 +26,6 @@
                     .then(response => response.text())
                     .then(data => {
                         console.log(data);
-                        // Optionally, add the new item to the DOM or reload the page
                         location.reload();
                     })
                     .catch(error => {
@@ -56,6 +55,22 @@
                         });
                     }
                 });
+            });
+
+            document.querySelector("#delete-all").addEventListener("click", () => {
+                if (confirm("Are you sure you want to delete all items?")) {
+                    fetch("/delete-all-items", {
+                        method: "DELETE"
+                    })
+                    .then(response => response.text())
+                    .then(data => {
+                        console.log(data);
+                        location.reload();
+                    })
+                    .catch(error => {
+                        console.error("Error:", error);
+                    });
+                }
             });
         });
     </script>
@@ -88,6 +103,7 @@
                 </li>
             <% }); %>
         </ul>
+        <button id="delete-all" class="btn btn-danger" style="border-radius: 10px; margin-top: 20px;">Hammasini ochirish</button>
     </div>
 </body>
 </html>
