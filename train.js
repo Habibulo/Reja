@@ -1,5 +1,7 @@
 // 21-22 Dars
 
+const { log } = require("console");
+
 // const { rejects } = require("assert");
 // const { resolve } = require("path");
 
@@ -183,8 +185,92 @@
 // Yoqoridagi string tarkibida 7 dona raqam qatnashganligi uchun, natija 7 qaytadi
 
 // ===================================================================================
-const countDigits_2 = (text) => {
-    return text.replace(/[^0-9]/g, "").length;
-};
+// const countDigits_2 = (text) => {
+//     return text.replace(/[^0-9]/g, "").length;
+// };
 
-console.log("Answer:", countDigits_2("ad2a54y79wet0sfgb9"));
+// console.log("Answer:", countDigits_2("ad2a54y79wet0sfgb9"));
+
+
+// 2024-05-26
+// 26-27 Dars
+// MIT 14 TASK-C
+
+// Shop nomli class tuzing, va bu class 3 xill parametr qabul qilsin.
+// Hamda classning quyidagdek 3'ta metodi bo'lsin:
+
+// 1) qoldiq
+// 2) sotish
+// 3) qabul
+
+// Har bir metod ishga tushgan vaqtda log qilinsin
+
+// MASALAN:
+// const shop = new Shop(4, 5, 2)
+
+// shop.qoldiq();
+// natija qaytishi kerak: Hozir 20: 40'da 4'ta non, 5'ta lag'mon va 2'ta cola mavjud
+
+// shop.sotish("non", 3); & shop.qabul("cola", 4); & shop.qoldiq();
+// Natija qaytishi kerak: Hozir 20:50da 1ta non, 5ta lag'mon va 6ta cola mavjud!
+
+class Shop {
+    constructor(side_menu, food_name, drinks, count) {
+        this.side_menu = side_menu;
+        this.food_name = food_name;
+        this.drinks = drinks;
+        this.count = count
+    }
+    qoldiq() {
+        const date = new Date()
+        if (this.side_menu <= 0 || this.food_name <= 0 || this.drinks <= 0) {
+			console.log("Hozircha omborda mahsulotlar tugaganlari bor");
+		} 
+        else {
+            const ombor = (`
+                Hozir 
+                ${date.toLocaleTimeString()} da 
+                ${this.side_menu}ta non, 
+                ${this.food_name}ta lag'mon va 
+                ${this.drinks} blok cola mavjud`);
+			console.log(ombor);
+            }
+    }
+    sotish(mahsulot, soni) {
+        switch (mahsulot.toLowerCase()) {
+            case "non":
+                this.side_menu -= soni;
+                break;
+            case "lag'mon":
+                this.food_name -= soni;
+                break;
+            case "cola":
+                this.drinks -= soni;
+                break;
+            default:
+                console.log(`Hozirda omborda '${mahsulot}' mavjud emas`);
+                break;
+    }
+    }
+    qabul(mahsulot, qabul_soni) {
+        switch (mahsulot.toLowerCase()) {
+            case "non":
+                this.side_menu += qabul_soni;
+                break;
+            case "lag'mon":
+                this.food_name += qabul_soni;
+                break;
+            case "cola":
+                this.drinks += qabul_soni;
+                break;
+            default:
+                console.log(`Hozirda omborda '${mahsulot}' mavjud emas`);
+                break;
+            }
+    }
+}
+const shop = new Shop(4, 5, 2)
+// shop.qoldiq()
+shop.sotish("non", 1)
+shop.qabul('cola', 50)
+shop.qoldiq()

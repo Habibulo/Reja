@@ -31,15 +31,14 @@ app.set('view engine', 'ejs');
 
 // Routes
 app.post("/create-item", (req, res) => {
-    console.log("user entered /create-item");
     const new_plan = req.body.plan;
-    console.log("Plan to be added:", new_plan);
+    console.log(`user entered /${new_plan}`);
     db.collection("reja").insertOne({ plan: new_plan }, (err, data) => {
         if (err) {
             console.log("error on create-item request: ", err.message);
             res.status(500).end("(app.post/create-item) something went wrong!");
         } else {
-            console.log("Item added successfully:", data);
+            console.log("Item added successfully:",);
             res.status(200).end("(app.post/create-item) added successfully!");
         }
     });
@@ -52,22 +51,22 @@ app.get("/", (req, res) => {
             console.log("Collection Error: ", err.message);
             res.status(500).end("(app.get/) something went wrong");
         } else {
-            console.log("Collection Data: ", data);
+            // console.log("Collection Data: ", data);
             res.render("reja", { items: data });
         }
     });
 });
 
 app.delete("/delete-item", (req, res) => {
-    console.log("user deleted /");
+    console.log("user deleted /delete-item", req.body.new_plan);
     const itemId = req.body.id;
-    console.log("Item ID to delete:", itemId);
+    // console.log("Item ID to delete:", itemId);
     db.collection("reja").deleteOne({ _id: new ObjectId(itemId) }, (err, result) => {
         if (err) {
             console.log("error on delete-item request: ", err.message);
             res.status(500).end("(app.delete/delete-item) something went wrong!");
         } else {
-            console.log("Item deleted successfully:", result);
+            console.log("Item deleted successfully:");
             res.status(200).end("(app.delete/delete-item) deleted successfully!");
         }
     });
