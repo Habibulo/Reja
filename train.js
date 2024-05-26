@@ -214,66 +214,66 @@ const { log } = require("console");
 // shop.sotish("non", 3); & shop.qabul("cola", 4); & shop.qoldiq();
 // Natija qaytishi kerak: Hozir 20:50da 1ta non, 5ta lag'mon va 6ta cola mavjud!
 // ===================================================================================
-class Shop {
-    constructor(side_menu, food_name, drinks, count) {
-        this.side_menu = side_menu;
-        this.food_name = food_name;
-        this.drinks = drinks;
-        this.count = count
-    }
-    qoldiq() {
-        const date = new Date()
-        if (this.side_menu <= 0 || this.food_name <= 0 || this.drinks <= 0) {
-			console.log("Hozircha omborda mahsulotlar tugaganlari bor");
-		} 
-        else {
-            const ombor = (`
-                Hozir 
-                ${date.toLocaleTimeString()} da 
-                ${this.side_menu}ta non, 
-                ${this.food_name}ta lag'mon va 
-                ${this.drinks} blok cola mavjud`);
-			console.log(ombor);
-            }
-    }
-    sotish(mahsulot, soni) {
-        switch (mahsulot.toLowerCase()) {
-            case "non":
-                this.side_menu -= soni;
-                break;
-            case "lag'mon":
-                this.food_name -= soni;
-                break;
-            case "cola":
-                this.drinks -= soni;
-                break;
-            default:
-                console.log(`Hozirda omborda '${mahsulot}' mavjud emas`);
-                break;
-    }
-    }
-    qabul(mahsulot, qabul_soni) {
-        switch (mahsulot.toLowerCase()) {
-            case "non":
-                this.side_menu += qabul_soni;
-                break;
-            case "lag'mon":
-                this.food_name += qabul_soni;
-                break;
-            case "cola":
-                this.drinks += qabul_soni;
-                break;
-            default:
-                console.log(`Hozirda omborda '${mahsulot}' mavjud emas`);
-                break;
-            }
-    }
-}
-const shop = new Shop(4, 5, 2)
+// class Shop {
+//     constructor(side_menu, food_name, drinks, count) {
+//         this.side_menu = side_menu;
+//         this.food_name = food_name;
+//         this.drinks = drinks;
+//         this.count = count
+//     }
+//     qoldiq() {
+//         const date = new Date()
+//         if (this.side_menu <= 0 || this.food_name <= 0 || this.drinks <= 0) {
+// 			console.log("Hozircha omborda mahsulotlar tugaganlari bor");
+// 		} 
+//         else {
+//             const ombor = (`
+//                 Hozir 
+//                 ${date.toLocaleTimeString()} da 
+//                 ${this.side_menu}ta non, 
+//                 ${this.food_name}ta lag'mon va 
+//                 ${this.drinks} blok cola mavjud`);
+// 			console.log(ombor);
+//             }
+//     }
+//     sotish(mahsulot, soni) {
+//         switch (mahsulot.toLowerCase()) {
+//             case "non":
+//                 this.side_menu -= soni;
+//                 break;
+//             case "lag'mon":
+//                 this.food_name -= soni;
+//                 break;
+//             case "cola":
+//                 this.drinks -= soni;
+//                 break;
+//             default:
+//                 console.log(`Hozirda omborda '${mahsulot}' mavjud emas`);
+//                 break;
+//     }
+//     }
+//     qabul(mahsulot, qabul_soni) {
+//         switch (mahsulot.toLowerCase()) {
+//             case "non":
+//                 this.side_menu += qabul_soni;
+//                 break;
+//             case "lag'mon":
+//                 this.food_name += qabul_soni;
+//                 break;
+//             case "cola":
+//                 this.drinks += qabul_soni;
+//                 break;
+//             default:
+//                 console.log(`Hozirda omborda '${mahsulot}' mavjud emas`);
+//                 break;
+//             }
+//     }
+// }
+// const shop = new Shop(4, 5, 2)
+// // shop.qoldiq()
+// shop.sotish("non", 1)
+// shop.qabul('cola', 50)
 // shop.qoldiq()
-shop.sotish("non", 1)
-shop.qabul('cola', 50)
-shop.qoldiq()
 // ===================================================================================
 
 // 2024-05-29
