@@ -213,7 +213,7 @@ const { log } = require("console");
 
 // shop.sotish("non", 3); & shop.qabul("cola", 4); & shop.qoldiq();
 // Natija qaytishi kerak: Hozir 20:50da 1ta non, 5ta lag'mon va 6ta cola mavjud!
-
+// ===================================================================================
 class Shop {
     constructor(side_menu, food_name, drinks, count) {
         this.side_menu = side_menu;
@@ -274,3 +274,48 @@ const shop = new Shop(4, 5, 2)
 shop.sotish("non", 1)
 shop.qabul('cola', 50)
 shop.qoldiq()
+// ===================================================================================
+
+// 2024-05-29
+// 28-29 Dars
+// MIT 14 TASK-D
+
+//D-TASK: 
+//Shunday function tuzing, u 2ta string parametr ega bolsin,
+//hamda agar har ikkala string bir hil harflardan iborat bolsa 
+//true aks holda false qaytarsin
+//MASALAN checkContent("mitgroup", "gmtiprou") return qiladi true;
+
+
+function compareStrings(str1, str2) {
+    if (typeof str1 !== 'string' || typeof str2 !== 'string') {
+        console.error('Both parameters must be strings');
+        return;
+    }
+
+    // Convert strings to arrays of characters
+    let arr1 = str1.split('');
+    let arr2 = str2.split('');
+
+    // Sort the arrays to compare characters regardless of their order
+    arr1.sort();
+    arr2.sort();
+
+    // Join the arrays back to strings for easy comparison
+    let sortedStr1 = arr1.join('');
+    let sortedStr2 = arr2.join('');
+
+    if (sortedStr1 === sortedStr2) {
+        console.log('All strings match');
+    } else {
+        console.error('Error: Strings do not match');
+        console.error('Difference in str1: ', str1.split('').filter(char => !str2.includes(char)));
+        console.error('Difference in str2: ', str2.split('').filter(char => !str1.includes(char)));
+    }
+}
+
+// Example usage:
+compareStrings("mitgroup", "gmtiprou"); // All strings match
+compareStrings("mitgroup", "lmtdpreu"); // Error: Strings do not match
+
+
