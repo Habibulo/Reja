@@ -39,56 +39,7 @@
         </ul>
         <button id="delete-all" class="btn btn-danger" style="border-radius: 4px; margin-top: 10px;">Hammasini ochirish</button>
     </div>
-
-    <script>
-        document.getElementById("create-form").addEventListener("submit", function(e) {
-            e.preventDefault();
-            axios.post('/create-item', { plan: document.getElementById('create-field').value }).then(response => {
-                // Reload the page to get the updated list
-                window.location.reload();
-            }).catch(error => {
-                console.error(error);
-            });
-        });
-
-        document.querySelectorAll(".delete-me").forEach(button => {
-            button.addEventListener("click", function() {
-                if (confirm("Are you sure you want to delete this item?")) {
-                    axios.delete('/delete-item', { data: { id: this.getAttribute("data-id") } }).then(response => {
-                        // Reload the page to get the updated list
-                        window.location.reload();
-                    }).catch(error => {
-                        console.error(error);
-                    });
-                }
-            });
-        });
-
-        document.querySelectorAll(".edit-me").forEach(button => {
-            button.addEventListener("click", function() {
-                let newPlan = prompt("Enter the new plan", this.parentElement.parentElement.querySelector(".item-text").innerHTML);
-                if (newPlan) {
-                    axios.put('/update-item', { id: this.getAttribute("data-id"), plan: newPlan }).then(response => {
-                        // Reload the page to get the updated list
-                        window.location.reload();
-                    }).catch(error => {
-                        console.error(error);
-                    });
-                }
-            });
-        });
-
-        document.getElementById("delete-all").addEventListener("click", function() {
-            if (confirm("Are you sure you want to delete all items?")) {
-                axios.delete('/delete-all-items').then(response => {
-                    // Reload the page to get the updated list
-                    window.location.reload();
-                }).catch(error => {
-                    console.error(error);
-                });
-            }
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/browser.js"></script>
 </body>
-
 </html>
