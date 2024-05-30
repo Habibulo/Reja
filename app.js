@@ -61,13 +61,14 @@ app.get("/", (req, res) => {
 app.delete("/delete-item", (req, res) => {
     console.log("user deleted /");
     const itemId = req.body.id;
-    console.log("Item ID to delete:", itemId);
+    console.log("Item ID to delete:", newPlanDeleted);
+    const newPlanDeleted = req.body.plan;
     db.collection("reja").deleteOne({ _id: new ObjectId(itemId) }, (err, result) => {
         if (err) {
             console.log("error on delete-item request: ", err.message);
             res.status(500).end("(app.delete/delete-item) something went wrong!");
         } else {
-            console.log("Item deleted successfully:", result);
+            console.log("Item deleted successfully:", newPlanDeleted);
             res.status(200).end("(app.delete/delete-item) deleted successfully!");
         }
     });
@@ -80,8 +81,8 @@ app.delete("/delete-all-items", (req, res) => {
             console.log("error on delete-all-items request: ", err.message);
             res.status(500).end("(app.delete/delete-all-items) something went wrong!");
         } else {
-            console.log("All items deleted successfully:", result);
-            res.status(200).end("(app.delete/delete-all-items) all items deleted successfully!");
+            console.log("All items deleted successfully:");
+            // res.status(200).end("(app.delete/delete-all-items) all items deleted successfully!");
         }
     });
 });
@@ -91,7 +92,7 @@ app.put("/update-item", (req, res) => {
     const itemId = req.body.id;
     const newPlan = req.body.plan;
     console.log("Item ID to update:", itemId);
-    console.log("New plan:", newPlan);
+
     db.collection("reja").updateOne(
         { _id: new ObjectId(itemId) },
         { $set: { plan: newPlan } },
@@ -100,11 +101,12 @@ app.put("/update-item", (req, res) => {
                 console.log("error on update-item request: ", err.message);
                 res.status(500).end("(app.put/update-item) something went wrong!");
             } else {
-                console.log("Item updated successfully:", result);
-                res.status(200).end("(app.put/update-item) updated successfully!");
+                console.log("Item updated successfully to:", newPlan);
+                // res.status(200).end("(app.put/update-item) updated successfully!");
             }
         }
     );
+    console.log("New plan:", newPlan);
 });
 
 app.get('/author', (req, res) => {
