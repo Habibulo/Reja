@@ -333,3 +333,5 @@ function getReverse(str) {
   // Misol uchun:
   let result = getReverse("Khabibullo");
   console.log(result);
+
+// ETASK
