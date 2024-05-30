@@ -287,35 +287,49 @@ const { log } = require("console");
 //MASALAN checkContent("mitgroup", "gmtiprou") return qiladi true;
 
 
-function compareStrings(str1, str2) {
-    if (typeof str1 !== 'string' || typeof str2 !== 'string') {
-        console.error('Both parameters must be strings');
-        return;
-    }
+// function compareStrings(str1, str2) {
+//     if (typeof str1 !== 'string' || typeof str2 !== 'string') {
+//         console.error('Both parameters must be strings');
+//         return;
+//     }
 
-    // Convert strings to arrays of characters
-    let arr1 = str1.split('');
-    let arr2 = str2.split('');
+//     // Convert strings to arrays of characters
+//     let arr1 = str1.split('');
+//     let arr2 = str2.split('');
 
-    // Sort the arrays to compare characters regardless of their order
-    arr1.sort();
-    arr2.sort();
+//     // Sort the arrays to compare characters regardless of their order
+//     arr1.sort();
+//     arr2.sort();
 
-    // Join the arrays back to strings for easy comparison
-    let sortedStr1 = arr1.join('');
-    let sortedStr2 = arr2.join('');
+//     // Join the arrays back to strings for easy comparison
+//     let sortedStr1 = arr1.join('');
+//     let sortedStr2 = arr2.join('');
 
-    if (sortedStr1 === sortedStr2) {
-        console.log('All strings match');
-    } else {
-        console.error('Error: Strings do not match');
-        console.error('Difference in str1: ', str1.split('').filter(char => !str2.includes(char)));
-        console.error('Difference in str2: ', str2.split('').filter(char => !str1.includes(char)));
-    }
-}
+//     if (sortedStr1 === sortedStr2) {
+//         console.log('All strings match');
+//     } else {
+//         console.error('Error: Strings do not match');
+//         console.error('Difference in str1: ', str1.split('').filter(char => !str2.includes(char)));
+//         console.error('Difference in str2: ', str2.split('').filter(char => !str1.includes(char)));
+//     }
+// }
 
-// Example usage:
-compareStrings("mitgroup", "gmtiprou"); // All strings match
-compareStrings("mitgroup", "lmtdpreu"); // Error: Strings do not match
+// // Example usage:
+// compareStrings("mitgroup", "gmtiprou"); // All strings match
+// compareStrings("mitgroup", "lmtdpreu"); // Error: Strings do not match
+
+// ===================================================================================
+
+// E-TASK: 
+
+// Shunday function tuzing, u bitta string argumentni qabul qilib osha stringni teskari qilib return qilsin.
+// MASALAN: getReverse("hello") return qilsin "olleh"
 
 
+function getReverse(str) {
+    return str.split('').reduce((reversed, char) => char + reversed, '');
+  }
+  
+  // Misol uchun:
+  let result = getReverse("Khabibullo");
+  console.log(result);
