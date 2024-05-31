@@ -334,4 +334,5 @@ function getReverse(str) {
   let result = getReverse("Khabibullo");
   console.log(result);
 
-// ETASK
+  
+// ETASK done
