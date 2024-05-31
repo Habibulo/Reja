@@ -13,7 +13,7 @@ fs.readFile("database/user.json", "utf8", (err, data) => {
     }
 });
 
-// 1.MongoDB Connect
+// MongoDB Connect
 const db = require("./server").db();
 
 if (!db) {
@@ -37,10 +37,10 @@ app.post("/create-item", (req, res) => {
     db.collection("reja").insertOne({ plan: new_plan }, (err, data) => {
         if (err) {
             console.log("error on create-item request: ", err.message);
-            res.status(500).end("(app.post/create-item) something went wrong!");
+            res.status(500).json({ message: "something went wrong!" });
         } else {
             console.log("Item added successfully:", data);
-            res.status(200).end("(app.post/create-item) added successfully!");
+            res.status(200).json({ id: data.insertedId, plan: new_plan });
         }
     });
 });
@@ -50,7 +50,7 @@ app.get("/", (req, res) => {
     db.collection("reja").find().toArray((err, data) => {
         if (err) {
             console.log("Collection Error: ", err.message);
-            res.status(500).end("(app.get/) something went wrong");
+            res.status(500).end("something went wrong");
         } else {
             console.log("Collection Data: ", data);
             res.render("reja", { items: data });
@@ -61,15 +61,14 @@ app.get("/", (req, res) => {
 app.delete("/delete-item", (req, res) => {
     console.log("user deleted /");
     const itemId = req.body.id;
-    console.log("Item ID to delete:", newPlanDeleted);
-    const newPlanDeleted = req.body.plan;
+    console.log("Item ID to delete:", itemId);
     db.collection("reja").deleteOne({ _id: new ObjectId(itemId) }, (err, result) => {
         if (err) {
             console.log("error on delete-item request: ", err.message);
-            res.status(500).end("(app.delete/delete-item) something went wrong!");
+            res.status(500).json({ message: "something went wrong!" });
         } else {
-            console.log("Item deleted successfully:", newPlanDeleted);
-            res.status(200).end("(app.delete/delete-item) deleted successfully!");
+            console.log("Item deleted successfully:", itemId);
+            res.status(200).json({ message: "deleted successfully!" });
         }
     });
 });
@@ -79,10 +78,10 @@ app.delete("/delete-all-items", (req, res) => {
     db.collection("reja").deleteMany({}, (err, result) => {
         if (err) {
             console.log("error on delete-all-items request: ", err.message);
-            res.status(500).end("(app.delete/delete-all-items) something went wrong!");
+            res.status(500).json({ message: "something went wrong!" });
         } else {
             console.log("All items deleted successfully:");
-            // res.status(200).end("(app.delete/delete-all-items) all items deleted successfully!");
+            res.status(200).json({ message: "all items deleted successfully!" });
         }
     });
 });
@@ -99,14 +98,13 @@ app.put("/update-item", (req, res) => {
         (err, result) => {
             if (err) {
                 console.log("error on update-item request: ", err.message);
-                res.status(500).end("(app.put/update-item) something went wrong!");
+                res.status(500).json({ message: "something went wrong!" });
             } else {
                 console.log("Item updated successfully to:", newPlan);
-                // res.status(200).end("(app.put/update-item) updated successfully!");
+                res.status(200).json({ message: "updated successfully!" });
             }
         }
     );
-    console.log("New plan:", newPlan);
 });
 
 app.get('/author', (req, res) => {
@@ -114,4 +112,3 @@ app.get('/author', (req, res) => {
 });
 
 module.exports = app;
-// done
