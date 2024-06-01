@@ -326,13 +326,45 @@ const { log } = require("console");
 // MASALAN: getReverse("hello") return qilsin "olleh"
 
 
-function getReverse(str) {
-    return str.split('').reduce((reversed, char) => char + reversed, '');
-  }
+// function getReverse(str) {
+//     return str.split('').reduce((reversed, char) => char + reversed, '');
+//   }
   
-  // Misol uchun:
-  let result = getReverse("Khabibullo");
-  console.log(result);
+//   // Misol uchun:
+//   let result = getReverse("Khabibullo");
+//   console.log(result);
 
-  
-// ETASK done
+
+// // ETASK done
+
+// ===================================================================================
+
+// 2024-06-02:
+
+// MIT 14 TASK F
+// Yagona string argumentga ega findDoublers nomli function tuzing
+// Agar stringda bittadan ortiq bir xil harflar ishtirok etgan bo'lsa
+// true yokida false natija qaytarsin.
+
+// MASALAN: findDoublers("hello"); natija true qaytadi. Sababi ikki marotaba takrorlangan 'll' harfi mavjud!
+
+function findDoublers(inputString) {
+    const charCount = {};
+
+    for (let char of inputString) {
+        charCount[char] = (charCount[char] || 0) + 1;
+    }
+
+    for (let count in charCount) {
+        if (charCount[count] >= 2) {
+            console.log(true);
+            return;
+        }
+    }
+    console.log(false);
+}
+
+// Example usage:
+findDoublers('banana');  // True
+findDoublers('apple');   // True
+findDoublers('xyz');     // False
