@@ -39,7 +39,7 @@ app.post("/create-item", (req, res) => {
             console.log("error on create-item request: ", err.message);
             res.status(500).json({ message: "something went wrong!" });
         } else {
-            console.log("Item added successfully:", data);
+            console.log("Item added successfully:", new_plan);
             res.status(200).json({ id: data.insertedId, plan: new_plan });
         }
     });
